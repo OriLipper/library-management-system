@@ -1,0 +1,5 @@
+JDK >= 8
+Apache Derby
+GlassFish Server or any servlet container (Tomcat, etc.)
+JSP (JavaServer Pages)
+HTML/CSS for frontend design
