@@ -20,26 +20,43 @@ A comprehensive web-based Library Management System designed to manage book borr
   - Tracks the date a book is borrowed and the expected return date.
   - Admins can easily view loaned books and manage returns.
 
-## Project Structure
+## Project Architecture (MVC)
 
-### Backend
+This project follows the **MVC (Model-View-Controller)** architecture pattern:
 
-- **JSP (JavaServer Pages)**: Used for dynamic server-side rendering of HTML and handling HTTP requests. It allows the system to interact with the database and perform operations like user registration, book borrowing, and searching.
-  
-- **Servlets**: Java Servlets handle requests and responses in the background. Servlets such as `LoginServlet`, `BorrowBookServlet`, `ReturnBookServlet`, and others perform the core logic of the system, such as authenticating users and interacting with the database.
+1. **Model**:
+   - The model represents the data and the business logic. In this project, the **Java Beans** (`Book`, `Student`) represent the model. These classes define the structure of the data (e.g., books, students) and the rules for manipulating it.
+   - The **DAO (Data Access Object)** class handles interaction with the database, managing CRUD operations for books, students, and loans.
 
-- **Java Beans**: Java Beans (`Book`, `Student`) are used to encapsulate the data models for books and students. These are simple Java classes that define the structure of data and provide getter/setter methods.
+2. **View**:
+   - The view is responsible for rendering the user interface and displaying data to the user. In this project, the **JSP (JavaServer Pages)** are used as the view layer.
+   - JSP files such as `BorrowBook.jsp`, `ReturnBook.jsp`, `RegisterStudent.jsp`, and others present forms and data to the user, and capture user inputs like book details or login credentials.
 
-### Database
+3. **Controller**:
+   - The controller processes incoming requests, handles the user's input, and passes data to the model or view. Java **Servlets** like `LoginServlet`, `BorrowBookServlet`, `ReturnBookServlet`, and others serve as the controllers.
+   - The controllers retrieve data from the model, process it, and pass the results to the appropriate JSP view for rendering.
 
-- **Apache Derby**: A lightweight, open-source, relational database management system (RDBMS) used for data persistence. It stores student records, books, and loan details. The database schema includes tables for:
-  - **Students**: Holds information like names, emails, and passwords.
-  - **Books**: Stores information about the books available in the library.
-  - **Loans**: Tracks borrowed books, including dates and student information.
+### How MVC Works in This Project:
 
-### Frontend
+- When a user interacts with the system (e.g., borrows a book), the **view** (JSP) sends the request to the **controller** (Servlet), which processes the request.
+- The **controller** then interacts with the **model** (Java Beans and DAO) to update the database.
+- Finally, the **controller** forwards the updated data back to the **view** to display to the user.
 
-- **HTML/CSS**: Simple, clean front-end design that uses HTML and CSS to create the user interface for student interactions such as book search, registration, and loan management.
+### Project Structure
+
+#### Backend
+
+- **Java Beans**: Encapsulates the data models, such as `Book` and `Student`.
+- **Servlets**: Handle requests from JSP pages, process logic, and update data via the DAO.
+- **DAO (Data Access Object)**: Manages the connection to the Apache Derby database and handles data persistence and retrieval.
+
+#### Database
+
+- **Apache Derby**: A lightweight, open-source relational database used for managing student records, books, and loan information.
+
+#### Frontend
+
+- **HTML/CSS**: Provides a simple and clean user interface for searching, borrowing, and returning books.
 
 ## Setup Instructions
 
