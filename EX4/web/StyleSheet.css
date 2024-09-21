@@ -1,0 +1,54 @@
+/* Main container styling */
+div {
+    margin-left: 25%;  /* Shifts the main content 25% to the right, allowing space for the sidebar */
+    padding: 1px 16px;
+    height: 1000px;  /* Ensures the content area has a fixed height */
+}
+
+/* Paragraph styling */
+p {
+    color: blue;  /* Sets the text color for paragraphs */
+}
+
+/* Body reset to remove default margins */
+body {
+    margin: 0;
+}
+
+/* Sidebar styling */
+ul {
+    list-style-type: none;  /* Removes bullet points */
+    margin: 0;
+    padding: 0;
+    width: 25%;  /* Sidebar occupies 25% of the width */
+    background-color: #f1f1f1;  /* Light gray background */
+    position: fixed;  /* Fixed sidebar position */
+    height: 100%;  /* Full-height sidebar */
+    overflow: auto;  /* Allows scrolling if the content overflows */
+    border: 1px solid #e7e7e7;  /* Light border for the sidebar */
+}
+
+/* Link styling in the sidebar */
+li a {
+    display: block;
+    color: #000;  /* Default text color */
+    padding: 8px 16px;
+    text-decoration: none;  /* Removes underlining */
+}
+
+/* Active link styling */
+li a.active {
+    background-color: #4CAF50;  /* Green background for active links */
+    color: white;
+}
+
+/* Hover effect for non-active links */
+li a:hover:not(.active) {
+    background-color: #555;  /* Dark background on hover */
+    color: white;
+}
+
+/* Heading styling */
+h1 {
+    color: red;  /* Red color for headings */
+}
