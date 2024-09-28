@@ -73,7 +73,7 @@ To run this project locally, you will need the following installed:
 
 Clone the repository to your local machine using Git:
 ```bash
-git clone https://github.com/yourusername/library-management-system.git
+git clone https://github.com/OriLipper/library-management-system.git
 cd library-management-system
 ```
 
